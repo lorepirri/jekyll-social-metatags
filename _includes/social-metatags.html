@@ -8,10 +8,10 @@
 {% endif %}
 
 
-{% if page.author or page.facebook_publisher %}
+{% if page.author or page.facebook.publisher %}
   {% assign page_author = page.author | default: nil | escape %}
-  {% assign facebook_publisher = page.facebook_publisher | default: nil | escape %}
-  {% assign twitter_creator = page.twitter_username | default: site.twitter.site | default: nil | escape %}
+  {% assign facebook_publisher = page.facebook.publisher | default: nil | escape %}
+  {% assign twitter_creator = page.twitter.username | default: site.twitter.site | default: nil | escape %}
 {% else %}
   {% assign page_author = site.author | default: nil | escape %}
   {% assign facebook_publisher = site.facebook.publisher | default: nil | escape %}
@@ -20,10 +20,10 @@
 
 {% assign page_description = page.excerpt | default: site.description | default: site.github.project_tagline | strip_html | normalize_whitespace | truncate: 152 | escape %}
 
-{%if page.featured_image %}
-  {% assign page_featured_image = site.url | append: site.baseurl | append: page.featured_image %}
-{%else if site.featured_image %}
-  {% assign page_featured_image = site.url | append: site.baseurl | append: site.featured_image %}
+{%if page.image %}
+  {% assign page_image = site.url | append: site.baseurl | append: page.image %}
+{%else if site.image %}
+  {% assign page_image = site.url | append: site.baseurl | append: site.image %}
 {%endif %}
 
 {% assign canonical_url = page.url | replace:'index.html','' | absolute_url %}
@@ -49,8 +49,8 @@
 <!-- Schema.org markup for Google+ -->
 <meta itemprop="name" content="{{ page_title }}">
 <meta itemprop="description" content="{{ page_description }}">
-{%if page_featured_image %}
-  <meta itemprop="image" content="{{ page_featured_image }}">
+{%if page_image %}
+  <meta itemprop="image" content="{{ page_image }}">
 {%endif %}
 
 <!-- Twitter Card data -->
@@ -68,9 +68,9 @@
 {%endif %}
 
 <!-- Twitter summary card with large image must be at least 280x150px -->
-{%if page_featured_image %}
-  <meta name="twitter:image:src" content="{{ page_featured_image }}">
-  <meta property="twitter:image" content="{{ page_featured_image }}">
+{%if page_image %}
+  <meta name="twitter:image:src" content="{{ page_image }}">
+  <meta property="twitter:image" content="{{ page_image }}">
 {%endif %}
 <meta property="twitter:url" content="{{ canonical_url }}">
 
@@ -78,8 +78,8 @@
 <meta property="og:title" content="{{ page_title }}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ canonical_url }}" />
-{%if page_featured_image %}
-  <meta property="og:image" content="{{ page_featured_image }}" />
+{%if page_image %}
+  <meta property="og:image" content="{{ page_image }}" />
 {%endif %}
 <meta property="og:description" content="{{ page_description }}" />
 <meta property="og:site_name" content="{{ site.title }}" />
