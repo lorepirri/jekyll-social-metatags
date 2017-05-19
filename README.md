@@ -10,6 +10,8 @@ It adds the following meta tags to your site:
 * [Open Graph](http://ogp.me/) title, description, site title, and URL (for Facebook, LinkedIn, etc.)
 * [Twitter Summary Card](https://dev.twitter.com/cards/overview) metadata
 
+The usage is compatible with the plugin [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag), which provides a battle-tested template of crowdsourced best-practices.
+
 ## Installation
 
 Just place the `social-metatags.html` into your `_includes` folder and add this before your `</head>` html tag:
