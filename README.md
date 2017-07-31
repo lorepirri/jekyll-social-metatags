@@ -39,6 +39,7 @@ The metatags of any of the following fields will be created, if included in your
   * `facebook:app_id` - a Facebook app ID for Facebook insights
   * `facebook:publisher` - a Facebook page URL or ID of the publishing entity
   * `facebook:admins` - a Facebook user ID for domain insights linked to a personal account
+  * `facebook:authors` - a Facebook user ID linked to a personal account
 
   You'll want to describe one or more like so:
 
@@ -47,6 +48,7 @@ The metatags of any of the following fields will be created, if included in your
     app_id: 1234
     publisher: 1234
     admins: 1234
+    authors: 1234
    ```
 
 The metatags of any of the following fields will override the site's ones, if included in your post/page file:
